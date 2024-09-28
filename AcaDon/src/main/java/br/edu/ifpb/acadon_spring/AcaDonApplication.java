@@ -1,4 +1,4 @@
-package br.edu.ifpb.acadon_spring.api;
+package br.edu.ifpb.acadon_spring;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

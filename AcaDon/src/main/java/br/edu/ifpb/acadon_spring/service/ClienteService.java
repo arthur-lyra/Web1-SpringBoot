@@ -22,12 +22,12 @@ public class ClienteService {
         return this.ClienteRepository.findById(idCliente).orElse(null);
     }
 
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public Cliente inserirOuAtualizar(Cliente cliente) {
-        Cliente ClienteInserido = this.ClienteRepository.save(cliente);
-        if (cliente.getIdade() < 18) {
+        if (cliente.getIdade() < 14) {
             throw new RuntimeException("Menor de idade não permitido");
         }
+        Cliente ClienteInserido = this.ClienteRepository.save(cliente);
         return ClienteInserido;
     }
 

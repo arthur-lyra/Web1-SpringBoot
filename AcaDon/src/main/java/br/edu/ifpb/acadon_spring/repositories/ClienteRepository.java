@@ -3,9 +3,10 @@ package br.edu.ifpb.acadon_spring.repositories;
 import br.edu.ifpb.acadon_spring.model.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+@Repository
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 
     public List<Cliente> findByIdadeAndCpf(Integer idade, String cpf);
